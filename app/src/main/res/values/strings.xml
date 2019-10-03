@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Number Shapes App</string>
-    <string name="instructions">Check if a number is a triangular or rectangular!</string>
+    <string name="instructions">Check the shape of a number!</string>
     <string name="hint">Enter number</string>
     <string name="check_button">Check</string>
+    <string name="toast_text">The number is a</string>
+    <string name="toast_rectangular">rectangular</string>
+    <string name="toast_square">square</string>
+    <string name="toast_triangular">triangular</string>
+    <string name="toast_none">The number does not have a shape</string>
+    <string name="toast_number">number</string>
 </resources>
