@@ -41,27 +41,32 @@ public class MainActivity extends AppCompatActivity {
         enteredText = numberEditText.getText().toString();
 
         inputtedNumber = new Number();
-        inputtedNumber.numberValue = Integer.parseInt(enteredText);
-        String message = " ";
+        if (!enteredText.isEmpty()) {
+            inputtedNumber.numberValue = Integer.parseInt(enteredText);
+            String message = " ";
 
-        if (inputtedNumber.isTriangular()) {
-            message = message + getString(R.string.toast_triangular) + " ";
-        }
+            if (inputtedNumber.isTriangular()) {
+                message = message + getString(R.string.toast_triangular) + " ";
+            }
 
-        if (inputtedNumber.isRectangular()) {
-            message = message + getString(R.string.toast_rectangular) + " ";
-        }
+            if (inputtedNumber.isRectangular()) {
+                message = message + getString(R.string.toast_rectangular) + " ";
+            }
 
-        if (inputtedNumber.isSquare()) {
-           message = message + getString(R.string.toast_square);
-        }
+            if (inputtedNumber.isSquare()) {
+                message = message + getString(R.string.toast_square);
+            }
 
-        if (!inputtedNumber.isSquare() && !inputtedNumber.isRectangular() && !inputtedNumber.isTriangular()) {
-            Toast.makeText(this, getString(R.string.toast_none), Toast.LENGTH_SHORT).show();
+            if (!inputtedNumber.isSquare() && !inputtedNumber.isRectangular() && !inputtedNumber.isTriangular()) {
+                Toast.makeText(this, getString(R.string.toast_none), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, getString(R.string.toast_text) + message + " " + getString(R.string.toast_number), Toast.LENGTH_SHORT).show();
+
+            }
         } else {
-            Toast.makeText(this, getString(R.string.toast_text) + message + " " + getString(R.string.toast_number), Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(this, getString(R.string.toast_empty_text), Toast.LENGTH_SHORT).show();
         }
+
 
     }
 

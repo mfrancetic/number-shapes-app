@@ -9,4 +9,5 @@
     <string name="toast_triangular">triangular</string>
     <string name="toast_none">The number does not have a shape</string>
     <string name="toast_number">number</string>
+    <string name="toast_empty_text">Please input a valid number</string>
 </resources>
