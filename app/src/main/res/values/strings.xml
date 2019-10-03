@@ -7,7 +7,7 @@
     <string name="toast_rectangular">rectangular</string>
     <string name="toast_square">square</string>
     <string name="toast_triangular">triangular</string>
-    <string name="toast_none">does not have a shape</string>
+    <string name="toast_none">is not rectangular, triangular or square</string>
     <string name="toast_number">number</string>
     <string name="toast_and">and</string>
     <string name="toast_empty_text">Please input a valid number</string>
