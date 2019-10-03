@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     private int enteredNumber;
     private String enteredText;
+
+    private Number inputtedNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkNumberShape() {
         enteredText = numberEditText.getText().toString();
-        enteredNumber = Integer.parseInt(enteredText);
+
+        inputtedNumber = new Number();
+        inputtedNumber.numberValue = Integer.parseInt(enteredText);
+
+
     }
 
     private void clearEditText() {
