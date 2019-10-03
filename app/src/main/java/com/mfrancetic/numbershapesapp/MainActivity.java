@@ -45,29 +45,28 @@ public class MainActivity extends AppCompatActivity {
             inputtedNumber.numberValue = Integer.parseInt(enteredText);
             String message = " ";
 
-            if (inputtedNumber.isTriangular()) {
-                message = message + getString(R.string.toast_triangular) + " ";
-            }
-
-            if (inputtedNumber.isRectangular()) {
-                message = message + getString(R.string.toast_rectangular) + " ";
-            }
-
-            if (inputtedNumber.isSquare()) {
-                message = message + getString(R.string.toast_square);
-            }
-
             if (!inputtedNumber.isSquare() && !inputtedNumber.isRectangular() && !inputtedNumber.isTriangular()) {
-                Toast.makeText(this, getString(R.string.toast_none), Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, getString(R.string.toast_text) + message + " " + getString(R.string.toast_number), Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(this, inputtedNumber.numberValue + " " + getString(R.string.toast_none), Toast.LENGTH_SHORT).show();
+                return;
+            } else if (inputtedNumber.isTriangular() && inputtedNumber.isRectangular() && inputtedNumber.isSquare()) {
+                message = message + getString(R.string.toast_triangular) + ", " + getString(R.string.toast_rectangular) + " " + getString(R.string.toast_and) + " " + getString(R.string.toast_square);
+            } else if (inputtedNumber.isTriangular() && inputtedNumber.isRectangular() && !inputtedNumber.isSquare()) {
+                message = message + getString(R.string.toast_triangular) + " " + getString(R.string.toast_and) + " " + getString(R.string.toast_rectangular);
+            } else if (inputtedNumber.isTriangular() && !inputtedNumber.isRectangular() && inputtedNumber.isSquare()) {
+                message = message + getString(R.string.toast_triangular) + " " + getString(R.string.toast_and) + " " + getString(R.string.toast_square);
+            } else if (!inputtedNumber.isTriangular() && inputtedNumber.isRectangular() && inputtedNumber.isSquare()) {
+                message = message + getString(R.string.toast_rectangular) + " " + getString(R.string.toast_and) + " " + getString(R.string.toast_square);
+            } else if (!inputtedNumber.isTriangular() && !inputtedNumber.isRectangular() && inputtedNumber.isSquare()) {
+                message = message + getString(R.string.toast_square);
+            } else if (!inputtedNumber.isTriangular() && inputtedNumber.isRectangular() && !inputtedNumber.isSquare()) {
+                message = message + getString(R.string.toast_rectangular);
+            } else if (inputtedNumber.isTriangular() && !inputtedNumber.isRectangular() && !inputtedNumber.isSquare()) {
+                message = message + getString(R.string.toast_triangular);
             }
+            Toast.makeText(this, inputtedNumber.numberValue + " " + getString(R.string.toast_text) + message + " " + getString(R.string.toast_number), Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, getString(R.string.toast_empty_text), Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     private void clearEditText() {

@@ -3,12 +3,13 @@
     <string name="instructions">Check the shape of a number!</string>
     <string name="hint">Enter number</string>
     <string name="check_button">Check</string>
-    <string name="toast_text">The number is a</string>
+    <string name="toast_text">is a</string>
     <string name="toast_rectangular">rectangular</string>
     <string name="toast_square">square</string>
     <string name="toast_triangular">triangular</string>
-    <string name="toast_none">The number does not have a shape</string>
+    <string name="toast_none">does not have a shape</string>
     <string name="toast_number">number</string>
+    <string name="toast_and">and</string>
     <string name="toast_empty_text">Please input a valid number</string>
     <string name="image_content_description">Image displaying numbers</string>
 </resources>
