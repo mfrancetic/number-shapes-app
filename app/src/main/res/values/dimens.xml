@@ -3,4 +3,5 @@
     <dimen name="margin_side">16dp</dimen>
     <dimen name="margin_layout_top">24dp</dimen>
     <dimen name="margin_between">16dp</dimen>
+    <dimen name="image_height">300dp</dimen>
 </resources>
