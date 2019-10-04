@@ -19,10 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
     private Number inputtedNumber;
 
+    private NumberComponent component;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        component = DaggerNumberComponent.create();
 
         numberEditText = findViewById(R.id.number_edit_text);
         checkButton = findViewById(R.id.check_button);
@@ -40,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private void checkNumberShape() {
         enteredText = numberEditText.getText().toString();
 
-        inputtedNumber = new Number();
+        inputtedNumber = component.getNumber();
+
         if (!enteredText.isEmpty()) {
             inputtedNumber.numberValue = Integer.parseInt(enteredText);
             String message = " ";

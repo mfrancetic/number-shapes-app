@@ -1,6 +1,12 @@
 package com.mfrancetic.numbershapesapp;
 
+import javax.inject.Inject;
+
 public class Number {
+
+    @Inject
+    public Number() {
+    }
 
     public int numberValue;
 
